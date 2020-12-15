@@ -73,15 +73,9 @@ def yiq_lumi_satu(yiq):
     pq = in_range(q1 * b, -0.5226, 0.5226)
     return [py,pi,pq]
 
-ruta = "ca.png"
+ruta = "tigre.jpg"
 imag= Image.open(ruta)
 imgrgb = numpy.asarray(imag)
-
-rgb = [155, 30, 200]
-yiq = rgb_to_yiq(rgb)
-yiq2 = yiq_saturacion(yiq)
-rgb2 = yiq_to_rgb(yiq2)
-print(rgb, yiq, yiq2, rgb2)
 
 
 imgyiq=[]
@@ -89,12 +83,6 @@ for i in range(len(imgrgb)):
     imgyiq.append([])
     for j in range(len(imgrgb[i])):
         imgyiq[i].append(rgb_to_yiq(imgrgb[i][j]))
-
-imgrb=[]
-for i in range(len(imgyiq)):
-    imgrb.append([])
-    for j in range(len(imgyiq[i])):
-        imgrb[i].append(yiq_to_rgb(imgyiq[i][j]))
 
 imgyiq2=[]
 for i in range(len(imgyiq)):
@@ -110,7 +98,7 @@ for i in range(len(imgyiq2)):
 
 px2=numpy.array(imgrgb2, dtype=numpy.uint8)
 img2 = Image.fromarray(px2, 'RGB')
-img2.save("casa.png")
+img2.save("tigrenew.png")
 #imag.show()
 img2.show()
 

@@ -12,10 +12,6 @@ from PIL import Image, ImageTk
 from tkinter import filedialog
 import cv2
 
-#MOSTRAR IMAGEN EN ESCALA GRISES Y SU ESPECTRO DE FRECUENCIA
-#cv2.imshow("IMAGEN ORIGINAL",i_gray)
-#cv2.imshow("ESPECTRO DE FOURIER",np.uint8(255*Fuv_log/np.max(Fuv_log)))
-
 
 def tf():
     global file_name
